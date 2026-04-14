@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <time.h>
 
 #define LINE_LENGTH 1024
 
 int main()
 {
+    clock_t start = clock();
     FILE *filePointer = fopen("input.txt", "r");
     char buffer[LINE_LENGTH];
     int lines = 0, words = 0;
@@ -24,7 +26,10 @@ int main()
         }
     }
     fclose(filePointer);
+    clock_t end = clock();
+    double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
     printf("Lines: %d\n", lines);
     printf("Words: %d\n", words);
+    printf("Time: %f seconds\n", time_spent);
     return 0;
 }
