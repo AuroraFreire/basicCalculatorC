@@ -23,10 +23,21 @@ void subtract()
     printf("%lf + %lf = %lf\n", s1, s2, answerS);
 }
 
+void multiply()
+{
+    double m1, m2, answerM;
+    printf("Enter the first number:\n");
+    scanf("%lf", &m1);
+    printf("Enter the second number:\n");
+    scanf("%lf", &m2);
+    answerM = m1 * m2;
+    printf("%lf + %lf = %lf\n", m1, m2, answerM);
+}
+
 int main()
 {
     char userInput;
-    printf("What arithmetic operation would u like to perform? (+) (-)\n");
+    printf("What arithmetic operation would u like to perform? (+) (-) (x/*)\n");
     scanf(" %c", &userInput);
     if (userInput == '+')
     {
@@ -35,6 +46,10 @@ int main()
     else if (userInput == '-')
     {
         subtract();
+    }
+    else if (userInput == '*' || userInput == 'x')
+    {
+        multiply();
     }
     else
     {
